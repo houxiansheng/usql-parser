@@ -1,5 +1,5 @@
 {
-    "name": "usql-parser",
+    "name": "hxb/usql-parser",
     "description": "sql-parser",
     "license": "MIT",
     "authors": [
