@@ -1,6 +1,7 @@
 {
     "name": "vendor/usql-parser",
     "description": "sql-parser",
+    "license": "MIT",
     "authors": [
         {
             "name": "hxb",
