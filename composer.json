@@ -1,0 +1,17 @@
+{
+    "name": "vendor/usql-parser",
+    "description": "sql-parser",
+    "authors": [
+        {
+            "name": "hxb",
+            "email": "houxianbiao@xin.com"
+        }
+    ],
+    "require": {},
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "USQL\\": "src/"
+        }
+    }
+}
