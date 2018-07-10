@@ -1,10 +1,10 @@
 {
-    "name": "MrHo/usql-parser",
+    "name": "wolfans/usql-parser",
     "description": "sql-parser",
     "license": "MIT",
     "authors": [
         {
-            "name": "MrHo",
+            "name": "hxb",
             "email": "houxianbiao@xin.com"
         }
     ],
