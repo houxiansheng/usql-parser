@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class LimitProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class LimitProcessor extends AbstractProcessor {
 
     public function process($tokens) {
         $rowcount = "";

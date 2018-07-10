@@ -50,7 +50,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class InsertBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class InsertBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

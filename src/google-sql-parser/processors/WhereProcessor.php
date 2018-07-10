@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class WhereProcessor extends ExpressionListProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class WhereProcessor extends ExpressionListProcessor {
 
 }
 ?>

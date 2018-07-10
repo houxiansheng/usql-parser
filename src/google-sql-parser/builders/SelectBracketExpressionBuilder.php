@@ -49,7 +49,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class SelectBracketExpressionBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class SelectBracketExpressionBuilder {
 
     protected function buildSubTree($parsed, $delim) {
         $builder = new SubTreeBuilder();

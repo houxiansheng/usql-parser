@@ -54,7 +54,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class TableExpressionBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class TableExpressionBuilder {
 
     protected function buildFROM($parsed) {
         $builder = new FromBuilder();

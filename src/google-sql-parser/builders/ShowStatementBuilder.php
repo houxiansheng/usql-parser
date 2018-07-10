@@ -50,7 +50,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class ShowStatementBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class ShowStatementBuilder {
 
     protected function buildWHERE($parsed) {
         $builder = new WhereBuilder();

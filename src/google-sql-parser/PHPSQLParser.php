@@ -49,7 +49,9 @@
  * @author  André Rothe <arothe@phosco.info>
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  */
-class PHPSQLParser {
+
+ namespace USQL\GoogleSqlParser;
+ class PHPSQLParser {
 
     public $parsed;
 

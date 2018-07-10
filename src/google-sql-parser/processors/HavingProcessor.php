@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class HavingProcessor extends ExpressionListProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class HavingProcessor extends ExpressionListProcessor {
 
 }
 ?>

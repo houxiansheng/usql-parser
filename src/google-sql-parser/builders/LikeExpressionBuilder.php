@@ -53,7 +53,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class LikeExpressionBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class LikeExpressionBuilder {
 
     protected function buildTable($parsed, $index) {
         $builder = new TableBuilder();

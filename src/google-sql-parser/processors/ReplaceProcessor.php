@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class ReplaceProcessor extends InsertProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class ReplaceProcessor extends InsertProcessor {
 
     public function process($tokenList, $token_category = 'REPLACE') {
         return parent::process($tokenList, 'REPLACE');

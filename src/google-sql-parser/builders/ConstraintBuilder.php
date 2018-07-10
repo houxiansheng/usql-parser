@@ -50,7 +50,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class ConstraintBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class ConstraintBuilder {
 
     protected function buildConstant($parsed) {
         $builder = new ConstantBuilder();

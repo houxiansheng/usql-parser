@@ -43,7 +43,9 @@
  * @author arothe
  *
  */
-class CreateDefinitionProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class CreateDefinitionProcessor extends AbstractProcessor {
 
     protected function correctExpressionType(&$expr) {
         $type = ExpressionType::EXPRESSION;

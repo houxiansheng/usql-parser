@@ -49,7 +49,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class LimitBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class LimitBuilder {
 
     public function build($parsed) {
         $sql = ($parsed['offset'] ? $parsed['offset'] . ", " : "") . $parsed['rowcount'];

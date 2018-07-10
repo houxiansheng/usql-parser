@@ -38,7 +38,9 @@
  * @author arothe
  *
  */
-class InvalidParameterException extends InvalidArgumentException {
+
+ namespace USQL\GoogleSqlParser;
+ class InvalidParameterException extends InvalidArgumentException {
 
     protected $argument;
 

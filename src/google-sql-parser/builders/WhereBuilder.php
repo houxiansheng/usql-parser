@@ -59,7 +59,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class WhereBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class WhereBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

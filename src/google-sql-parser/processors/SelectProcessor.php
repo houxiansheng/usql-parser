@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class SelectProcessor extends SelectExpressionProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class SelectProcessor extends SelectExpressionProcessor {
 
     public function process($tokens) {
         $expression = "";

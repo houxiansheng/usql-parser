@@ -40,7 +40,9 @@
  * @author arothe
  * 
  */
-class CreateProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class CreateProcessor extends AbstractProcessor {
 
     public function process($tokens) {
         $result = array();

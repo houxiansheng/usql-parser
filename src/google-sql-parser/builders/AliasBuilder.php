@@ -47,7 +47,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class AliasBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class AliasBuilder {
 
     public function hasAlias($parsed) {
         return isset($parsed['alias']);

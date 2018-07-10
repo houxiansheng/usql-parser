@@ -42,7 +42,9 @@
  * @author arothe
  *
  */
-class ColumnDefinitionProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class ColumnDefinitionProcessor extends AbstractProcessor {
 
     protected function processExpressionList($parsed) {
         $processor = new ExpressionListProcessor();

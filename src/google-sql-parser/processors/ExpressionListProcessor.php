@@ -42,7 +42,9 @@
  * @author arothe
  * 
  */
-class ExpressionListProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class ExpressionListProcessor extends AbstractProcessor {
 
     public function process($tokens) {
         $resultList = array();

@@ -40,7 +40,9 @@
  * @author arothe
  *
  */
-class UnsupportedFeatureException extends Exception {
+
+ namespace USQL\GoogleSqlParser;
+ class UnsupportedFeatureException extends Exception {
 
     protected $key;
 

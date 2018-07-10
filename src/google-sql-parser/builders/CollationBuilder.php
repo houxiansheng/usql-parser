@@ -53,7 +53,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class CollationBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class CollationBuilder {
 
     protected function buildOperator($parsed) {
         $builder = new OperatorBuilder();

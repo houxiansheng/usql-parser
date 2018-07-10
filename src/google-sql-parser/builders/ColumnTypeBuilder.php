@@ -52,7 +52,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class ColumnTypeBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class ColumnTypeBuilder {
 
     protected function buildColumnTypeBracketExpression($parsed) {
         $builder = new ColumnTypeBracketExpressionBuilder();

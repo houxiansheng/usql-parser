@@ -51,7 +51,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class DeleteStatementBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class DeleteStatementBuilder {
 
     protected function buildWHERE($parsed) {
         $builder = new WhereBuilder();

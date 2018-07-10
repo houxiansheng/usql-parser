@@ -52,7 +52,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class RefClauseBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class RefClauseBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

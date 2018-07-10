@@ -41,7 +41,9 @@
  * @author arothe
  *
  */
-class TableProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class TableProcessor extends AbstractProcessor {
 
     protected function getReservedType($token) {
         return array('expr_type' => ExpressionType::RESERVED, 'base_expr' => $token);

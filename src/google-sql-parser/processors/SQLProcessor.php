@@ -40,7 +40,9 @@
  * @author arothe
  * 
  */
-class SQLProcessor extends SQLChunkProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class SQLProcessor extends SQLChunkProcessor {
 
     /*
      * This function breaks up the SQL statement into logical sections. 

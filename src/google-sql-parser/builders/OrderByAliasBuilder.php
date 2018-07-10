@@ -50,7 +50,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class OrderByAliasBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class OrderByAliasBuilder {
 
     protected function buildDirection($parsed) {
         $builder = new DirectionBuilder();

@@ -41,7 +41,9 @@
  * @author arothe
  * 
  */
-class SetProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class SetProcessor extends AbstractProcessor {
 
     private $expressionListProcessor;
 

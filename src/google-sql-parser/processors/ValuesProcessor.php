@@ -41,7 +41,9 @@
  * @author arothe
  * 
  */
-class ValuesProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class ValuesProcessor extends AbstractProcessor {
 
     private $recordProcessor;
 

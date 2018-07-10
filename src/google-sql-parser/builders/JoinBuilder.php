@@ -49,7 +49,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class JoinBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class JoinBuilder {
 
     public function build($parsed) {
         if ($parsed === 'CROSS') {

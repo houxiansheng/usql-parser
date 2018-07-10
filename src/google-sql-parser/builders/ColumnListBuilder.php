@@ -50,7 +50,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class ColumnListBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class ColumnListBuilder {
 
     protected function buildIndexColumn($parsed) {
         $builder = new IndexColumnBuilder();

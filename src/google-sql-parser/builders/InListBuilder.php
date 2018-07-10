@@ -50,7 +50,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class InListBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class InListBuilder {
 
     protected function buildSubTree($parsed, $delim) {
         $builder = new SubTreeBuilder();

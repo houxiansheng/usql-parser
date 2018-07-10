@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class DuplicateProcessor extends SetProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class DuplicateProcessor extends SetProcessor {
 
     public function process($tokens,$isUpdate =false) {
         return parent::process($tokens, false);

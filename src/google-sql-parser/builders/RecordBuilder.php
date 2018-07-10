@@ -53,7 +53,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class RecordBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class RecordBuilder {
 
     protected function buildOperator($parsed) {
         $builder = new OperatorBuilder();

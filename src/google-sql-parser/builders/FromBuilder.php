@@ -52,7 +52,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class FromBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class FromBuilder {
 
     protected function buildTable($parsed, $key) {
         $builder = new TableBuilder();

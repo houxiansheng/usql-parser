@@ -40,7 +40,9 @@
  *
  * @author arothe
  */
-class ReferenceDefinitionProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class ReferenceDefinitionProcessor extends AbstractProcessor {
 
     protected function buildReferenceDef($expr, $base_expr, $key) {
         $expr['till'] = $key;

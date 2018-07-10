@@ -49,7 +49,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class PositionBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class PositionBuilder {
 
     public function build($parsed) {
         if ($parsed['expr_type'] !== ExpressionType::POSITION) {

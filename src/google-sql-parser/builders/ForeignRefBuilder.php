@@ -54,7 +54,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class ForeignRefBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class ForeignRefBuilder {
 
     protected function buildTable($parsed) {
         $builder = new TableBuilder();

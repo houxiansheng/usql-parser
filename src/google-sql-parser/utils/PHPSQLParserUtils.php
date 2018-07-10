@@ -36,7 +36,9 @@
  * @author arothe
  * @deprecated
  */
-class PHPSQLParserUtils {
+
+ namespace USQL\GoogleSqlParser;
+ class PHPSQLParserUtils {
 
     /**
      * Prints an array only if debug mode is on.

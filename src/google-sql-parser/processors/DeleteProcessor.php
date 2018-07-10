@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class DeleteProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class DeleteProcessor extends AbstractProcessor {
 
     public function process($tokens) {
         $tables = array();

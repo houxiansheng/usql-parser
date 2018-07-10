@@ -51,7 +51,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *
  */
-class PHPSQLLexer {
+
+ namespace USQL\GoogleSqlParser;
+ class PHPSQLLexer {
 
     protected $splitters;
 

@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class GroupByProcessor extends OrderByProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class GroupByProcessor extends OrderByProcessor {
 
     public function process($tokens, $select = array()) {
         $out = array();

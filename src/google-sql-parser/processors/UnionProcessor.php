@@ -42,7 +42,9 @@
  * @author arothe
  * 
  */
-class UnionProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class UnionProcessor extends AbstractProcessor {
 
     public function isUnion($queries) {
         $unionTypes = array('UNION', 'UNION ALL');

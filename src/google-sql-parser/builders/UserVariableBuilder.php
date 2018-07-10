@@ -49,7 +49,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class UserVariableBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class UserVariableBuilder {
 
     public function build($parsed) {
         if ($parsed['expr_type'] !== ExpressionType::USER_VARIABLE) {

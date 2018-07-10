@@ -50,7 +50,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class InsertStatementBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class InsertStatementBuilder {
 
     protected function buildVALUES($parsed) {
         $builder = new ValuesBuilder();

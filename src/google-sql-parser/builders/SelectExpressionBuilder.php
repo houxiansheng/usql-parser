@@ -51,7 +51,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class SelectExpressionBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class SelectExpressionBuilder {
 
     protected function buildSubTree($parsed, $delim) {
         $builder = new SubTreeBuilder();

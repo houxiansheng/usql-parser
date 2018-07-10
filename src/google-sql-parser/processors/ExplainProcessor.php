@@ -40,7 +40,9 @@
  * @author arothe
  * 
  */
-class ExplainProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class ExplainProcessor extends AbstractProcessor {
 
     protected function isStatement($keys, $needle = "EXPLAIN") {
         $pos = array_search($needle, $keys);

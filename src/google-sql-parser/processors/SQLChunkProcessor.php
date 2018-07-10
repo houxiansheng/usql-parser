@@ -66,7 +66,9 @@
  * @author arothe
  * 
  */
-class SQLChunkProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class SQLChunkProcessor extends AbstractProcessor {
 
     protected function moveLIKE(&$out) {
         if (!isset($out['TABLE']['like'])) {

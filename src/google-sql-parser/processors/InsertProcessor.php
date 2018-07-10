@@ -41,7 +41,9 @@
  * @author arothe
  * 
  */
-class InsertProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class InsertProcessor extends AbstractProcessor {
 
     public function process($tokenList, $token_category = 'INSERT') {
         $table = "";

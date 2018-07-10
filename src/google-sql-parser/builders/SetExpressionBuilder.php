@@ -54,7 +54,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class SetExpressionBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class SetExpressionBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

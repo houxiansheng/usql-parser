@@ -49,7 +49,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class OperatorBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class OperatorBuilder {
 
     public function build($parsed) {
         if ($parsed['expr_type'] !== ExpressionType::OPERATOR) {

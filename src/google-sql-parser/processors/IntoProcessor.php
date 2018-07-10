@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class IntoProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class IntoProcessor extends AbstractProcessor {
 
     /**
      * TODO: This is a dummy function, we cannot parse INTO as part of SELECT

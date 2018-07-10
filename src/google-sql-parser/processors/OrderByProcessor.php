@@ -41,7 +41,9 @@
  * @author arothe
  * 
  */
-class OrderByProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class OrderByProcessor extends AbstractProcessor {
 
     private $selectExpressionProcessor;
 

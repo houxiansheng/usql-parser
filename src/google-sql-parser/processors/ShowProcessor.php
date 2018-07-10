@@ -42,7 +42,9 @@
  * @author arothe
  * 
  */
-class ShowProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class ShowProcessor extends AbstractProcessor {
 
     private $limitProcessor;
 

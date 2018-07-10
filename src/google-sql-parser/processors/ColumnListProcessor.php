@@ -40,7 +40,9 @@
  * @author arothe
  * 
  */
-class ColumnListProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class ColumnListProcessor extends AbstractProcessor {
 
     public function process($tokens) {
         $columns = explode(",", $tokens);

@@ -41,7 +41,9 @@
  * @author arothe
  * 
  */
-class SelectExpressionProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class SelectExpressionProcessor extends AbstractProcessor {
 
     private $expressionListProcessor;
 

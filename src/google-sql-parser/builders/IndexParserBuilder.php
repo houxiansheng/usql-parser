@@ -55,7 +55,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class IndexParserBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class IndexParserBuilder {
 
     protected function buildReserved($parsed) {
         $builder = new ReservedBuilder();

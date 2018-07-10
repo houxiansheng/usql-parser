@@ -47,7 +47,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class DeleteBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class DeleteBuilder {
 
     public function build($parsed) {
         $sql = "DELETE";

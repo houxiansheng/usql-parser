@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class UsingProcessor extends FromProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class UsingProcessor extends FromProcessor {
 
 }
 ?>

@@ -58,7 +58,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class WhereBracketExpressionBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class WhereBracketExpressionBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

@@ -41,7 +41,9 @@
  * @author arothe
  * 
  */
-class RenameProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class RenameProcessor extends AbstractProcessor {
 
     public function process($tokenList) {
         $base_expr = "";

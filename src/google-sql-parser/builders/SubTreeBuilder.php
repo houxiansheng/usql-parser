@@ -57,7 +57,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class SubTreeBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class SubTreeBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

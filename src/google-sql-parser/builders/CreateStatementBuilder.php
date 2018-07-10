@@ -51,7 +51,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class CreateStatementBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class CreateStatementBuilder {
 
     protected function buildLIKE($parsed) {
         $builder = new LikeBuilder();

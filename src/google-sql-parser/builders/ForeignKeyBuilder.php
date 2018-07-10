@@ -54,7 +54,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class ForeignKeyBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class ForeignKeyBuilder {
 
     protected function buildConstant($parsed) {
         $builder = new ConstantBuilder();

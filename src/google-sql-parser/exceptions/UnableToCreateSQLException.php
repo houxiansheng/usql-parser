@@ -40,7 +40,9 @@
  * @author arothe
  *
  */
-class UnableToCreateSQLException extends Exception {
+
+ namespace USQL\GoogleSqlParser;
+ class UnableToCreateSQLException extends Exception {
 
     protected $part;
     protected $partkey;

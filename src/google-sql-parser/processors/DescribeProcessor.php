@@ -39,7 +39,9 @@
  * @author arothe
  * 
  */
-class DescribeProcessor extends ExplainProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class DescribeProcessor extends ExplainProcessor {
 
     protected function isStatement($keys, $needle = "DESCRIBE") {
         return parent::isStatement($keys, $needle);

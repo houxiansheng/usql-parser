@@ -2,7 +2,9 @@
 
 
 
-class ExpressionToken {
+
+ namespace USQL\GoogleSqlParser;
+ class ExpressionToken {
 
     private $subTree;
     private $expression;

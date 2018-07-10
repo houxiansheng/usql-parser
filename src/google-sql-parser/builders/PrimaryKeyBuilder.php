@@ -56,7 +56,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class PrimaryKeyBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class PrimaryKeyBuilder {
 
     protected function buildColumnList($parsed) {
         $builder = new ColumnListBuilder();

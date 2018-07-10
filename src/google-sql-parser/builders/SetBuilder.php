@@ -50,7 +50,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class SetBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class SetBuilder {
 
     protected function buildSetExpression($parsed) {
         $builder = new SetExpressionBuilder();

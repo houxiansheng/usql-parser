@@ -53,7 +53,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class SelectBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class SelectBuilder {
 
     protected function buildConstant($parsed) {
         $builder = new ConstantBuilder();

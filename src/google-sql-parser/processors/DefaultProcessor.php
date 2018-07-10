@@ -41,7 +41,9 @@
  * @author arothe
  * 
  */
-class DefaultProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class DefaultProcessor extends AbstractProcessor {
 
     public function process($sql) {
 

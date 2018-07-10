@@ -40,6 +40,7 @@
  * @author arothe
  * 
  */
+namespace USQL\GoogleSqlParser;
 abstract class AbstractProcessor {
 
     /**

@@ -49,7 +49,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class CreateTableDefinitionBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class CreateTableDefinitionBuilder {
 
     protected function buildTableBracketExpression($parsed) {
         $builder = new TableBracketExpressionBuilder();

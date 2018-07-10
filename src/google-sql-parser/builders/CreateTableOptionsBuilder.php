@@ -52,7 +52,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class CreateTableOptionsBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class CreateTableOptionsBuilder {
 
     protected function buildExpression($parsed) {
         $builder = new SelectExpressionBuilder();

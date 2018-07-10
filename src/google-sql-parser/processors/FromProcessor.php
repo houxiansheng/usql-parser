@@ -42,7 +42,9 @@
  * @author arothe
  * 
  */
-class FromProcessor extends AbstractProcessor {
+
+ namespace USQL\GoogleSqlParser;
+ class FromProcessor extends AbstractProcessor {
 
     protected function initParseInfo($parseInfo = false) {
         // first init

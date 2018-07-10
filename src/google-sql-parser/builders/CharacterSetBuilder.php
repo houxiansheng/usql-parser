@@ -54,7 +54,9 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-class CharacterSetBuilder {
+
+ namespace USQL\GoogleSqlParser;
+ class CharacterSetBuilder {
 
     protected function buildConstant($parsed) {
         $builder = new ConstantBuilder();
