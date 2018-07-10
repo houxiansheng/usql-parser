@@ -1,18 +1,6 @@
 <?php
 namespace USQL\SqlRestraint;
 
-
-
-
-
-
-
-
-
-
-
-
-
 class Restraint
 {
 
@@ -24,13 +12,13 @@ class Restraint
 
     public function __construct()
     {
-        $this->register('SELECT', \SqlRestraint\Module\Select::class);
-        $this->register('DELETE', \SqlRestraint\Module\Delete::class);
-        $this->register('FROM', \SqlRestraint\Module\From::class);
-        $this->register('WHERE', \SqlRestraint\Module\Where::class);
-        $this->register('GROUP', \SqlRestraint\Module\Group::class);
-        $this->register('ORDER', \SqlRestraint\Module\Order::class);
-        $this->register('LIMIT', \SqlRestraint\Module\Limit::class);
+        $this->register('SELECT', \USQL\SqlRestraint\Module\Select::class);
+        $this->register('DELETE', \USQL\SqlRestraint\Module\Delete::class);
+        $this->register('FROM', \USQL\SqlRestraint\Module\From::class);
+        $this->register('WHERE', \USQL\SqlRestraint\Module\Where::class);
+        $this->register('GROUP', \USQL\SqlRestraint\Module\Group::class);
+        $this->register('ORDER', \USQL\SqlRestraint\Module\Order::class);
+        $this->register('LIMIT', \USQL\SqlRestraint\Module\Limit::class);
     }
 
     protected function register($type, $className)
@@ -45,8 +33,8 @@ class Restraint
                 $this->recursion($key, $val);
             }
         }
-        $err = \SqlRestraint\Common\ErrorLog::getLog();
-        \SqlRestraint\Common\ErrorLog::destoryErrMsg();
+        $err = \USQL\SqlRestraint\Common\ErrorLog::getLog();
+        \USQL\SqlRestraint\Common\ErrorLog::destoryErrMsg();
         return $err;
     }
 
