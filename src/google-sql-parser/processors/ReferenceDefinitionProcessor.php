@@ -30,9 +30,9 @@
  * DAMAGE.
  */
 
-
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/IndexColumnListProcessor.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionType.php');
 
 /**
  *
@@ -40,9 +40,7 @@
  *
  * @author arothe
  */
-
- namespace USQL\GoogleSqlParser;
- class ReferenceDefinitionProcessor extends AbstractProcessor {
+class ReferenceDefinitionProcessor extends AbstractProcessor {
 
     protected function buildReferenceDef($expr, $base_expr, $key) {
         $expr['till'] = $key;

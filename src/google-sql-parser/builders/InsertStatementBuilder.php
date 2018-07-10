@@ -39,8 +39,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/InsertBuilder.php';
+require_once dirname(__FILE__) . '/ValuesBuilder.php';
 
 /**
  * This class implements the builder for the whole Insert statement. You can overwrite
@@ -50,9 +50,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class InsertStatementBuilder {
+class InsertStatementBuilder {
 
     protected function buildVALUES($parsed) {
         $builder = new ValuesBuilder();

@@ -39,11 +39,11 @@
  * 
  */
 
-
-
-
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ConstantBuilder.php';
+require_once dirname(__FILE__) . '/OperatorBuilder.php';
+require_once dirname(__FILE__) . '/ReservedBuilder.php';
 
 /**
  * This class implements the builder for the collation statement part of CREATE TABLE. 
@@ -53,9 +53,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class CollationBuilder {
+class CollationBuilder {
 
     protected function buildOperator($parsed) {
         $builder = new OperatorBuilder();

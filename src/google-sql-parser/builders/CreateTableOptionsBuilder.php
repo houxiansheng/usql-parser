@@ -39,10 +39,10 @@
  * 
  */
 
-
-
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/SelectExpressionBuilder.php';
+require_once dirname(__FILE__) . '/CharacterSetBuilder.php';
+require_once dirname(__FILE__) . '/CollationBuilder.php';
 
 /**
  * This class implements the builder for the table-options statement part of CREATE TABLE. 
@@ -52,9 +52,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class CreateTableOptionsBuilder {
+class CreateTableOptionsBuilder {
 
     protected function buildExpression($parsed) {
         $builder = new SelectExpressionBuilder();

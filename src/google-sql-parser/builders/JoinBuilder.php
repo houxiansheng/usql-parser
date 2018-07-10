@@ -39,7 +39,7 @@
  * 
  */
 
-
+require_once dirname(__FILE__) . '/../exceptions/UnsupportedFeatureException.php';
 
 /**
  * This class implements the builder for the JOIN statement parts (within FROM). 
@@ -49,9 +49,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class JoinBuilder {
+class JoinBuilder {
 
     public function build($parsed) {
         if ($parsed === 'CROSS') {

@@ -30,7 +30,7 @@
  * DAMAGE.
  */
 
-
+require_once(dirname(__FILE__) . '/SelectExpressionProcessor.php');
 
 /**
  * 
@@ -39,9 +39,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class SelectProcessor extends SelectExpressionProcessor {
+class SelectProcessor extends SelectExpressionProcessor {
 
     public function process($tokens) {
         $expression = "";

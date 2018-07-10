@@ -38,12 +38,12 @@
  * @version   SVN: $Id: SelectBuilder.php 903 2014-01-06 11:29:19Z phosco@gmx.de $
  * 
  */
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ConstantBuilder.php';
+require_once dirname(__FILE__) . '/FunctionBuilder.php';
+require_once dirname(__FILE__) . '/SelectExpressionBuilder.php';
+require_once dirname(__FILE__) . '/SelectBracketExpressionBuilder.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
 
 /**
  * This class implements the builder for the [SELECT] field. You can overwrite
@@ -53,9 +53,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class SelectBuilder {
+class SelectBuilder {
 
     protected function buildConstant($parsed) {
         $builder = new ConstantBuilder();

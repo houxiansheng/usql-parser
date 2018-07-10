@@ -39,9 +39,9 @@
  * 
  */
 
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/OrderByAliasBuilder.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
 
 /**
  * This class implements the builder for the ORDER-BY clause. 
@@ -51,9 +51,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class OrderByBuilder {
+class OrderByBuilder {
 
     protected function buildFunction($parsed) {
         $builder = new FunctionBuilder();

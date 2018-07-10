@@ -30,10 +30,10 @@
  * DAMAGE.
  */
 
-
-
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/SQLProcessor.php');
+require_once(dirname(__FILE__) . '/DefaultProcessor.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionType.php');
 
 /**
  * 
@@ -42,9 +42,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class UnionProcessor extends AbstractProcessor {
+class UnionProcessor extends AbstractProcessor {
 
     public function isUnion($queries) {
         $unionTypes = array('UNION', 'UNION ALL');

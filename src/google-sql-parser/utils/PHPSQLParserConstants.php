@@ -30,9 +30,7 @@
  * DAMAGE.
  */
 
-
- namespace USQL\GoogleSqlParser;
- class PHPSQLParserConstants {
+class PHPSQLParserConstants {
 
     protected static $reserved = array('ABS', 'ACOS', 'ADDDATE', 'ADDTIME', 'AES_ENCRYPT', 'AES_DECRYPT', 'AGAINST',
                                        'ASCII', 'ASIN', 'ATAN', 'AVG', 'BENCHMARK', 'BIN', 'BIT_AND', 'BIT_OR',

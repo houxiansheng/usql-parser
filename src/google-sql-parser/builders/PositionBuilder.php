@@ -39,7 +39,7 @@
  * 
  */
 
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  * This class implements the builder for positions of the GROUP-BY clause. 
@@ -49,9 +49,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class PositionBuilder {
+class PositionBuilder {
 
     public function build($parsed) {
         if ($parsed['expr_type'] !== ExpressionType::POSITION) {

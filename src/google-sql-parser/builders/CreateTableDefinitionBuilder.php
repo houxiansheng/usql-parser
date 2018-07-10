@@ -39,7 +39,7 @@
  * 
  */
 
-
+require_once dirname(__FILE__) . '/TableBracketExpressionBuilder.php';
 
 /**
  * This class implements the builder for the create definitions of CREATE TABLE. 
@@ -49,9 +49,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class CreateTableDefinitionBuilder {
+class CreateTableDefinitionBuilder {
 
     protected function buildTableBracketExpression($parsed) {
         $builder = new TableBracketExpressionBuilder();

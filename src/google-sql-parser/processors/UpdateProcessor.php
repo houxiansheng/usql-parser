@@ -30,7 +30,7 @@
  * DAMAGE.
  */
 
-
+require_once(dirname(__FILE__) . '/FromProcessor.php');
 
 /**
  * 
@@ -39,9 +39,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class UpdateProcessor extends FromProcessor {
+class UpdateProcessor extends FromProcessor {
 
 }
 ?>

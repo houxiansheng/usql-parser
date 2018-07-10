@@ -39,8 +39,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/TableBuilder.php';
 
 /**
  * This class implements the builder for the LIKE statement part of CREATE TABLE. 
@@ -50,9 +50,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class LikeBuilder {
+class LikeBuilder {
 
     protected function buildTable($parsed, $index) {
         $builder = new TableBuilder();

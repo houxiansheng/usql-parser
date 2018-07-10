@@ -39,12 +39,12 @@
  * 
  */
 
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/RefClauseBuilder.php';
+require_once dirname(__FILE__) . '/RefTypeBuilder.php';
+require_once dirname(__FILE__) . '/JoinBuilder.php';
+require_once dirname(__FILE__) . '/AliasBuilder.php';
+require_once dirname(__FILE__) . '/AliasBuilder.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  * This class implements the builder for sub-queries. 
@@ -54,9 +54,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class SubQueryBuilder {
+class SubQueryBuilder {
 
     protected function buildRefClause($parsed) {
         $builder = new RefClauseBuilder();

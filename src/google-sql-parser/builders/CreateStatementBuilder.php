@@ -39,9 +39,9 @@
  * 
  */
 
-
-
-
+require_once dirname(__FILE__) . '/LikeBuilder.php';
+require_once dirname(__FILE__) . '/SelectStatementBuilder.php';
+require_once dirname(__FILE__) . '/CreateBuilder.php';
 
 /**
  * This class implements the builder for the whole Create statement. You can overwrite
@@ -51,9 +51,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class CreateStatementBuilder {
+class CreateStatementBuilder {
 
     protected function buildLIKE($parsed) {
         $builder = new LikeBuilder();

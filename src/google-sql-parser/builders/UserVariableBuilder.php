@@ -39,7 +39,7 @@
  * 
  */
 
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  * This class implements the builder for an user variable. 
@@ -49,9 +49,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class UserVariableBuilder {
+class UserVariableBuilder {
 
     public function build($parsed) {
         if ($parsed['expr_type'] !== ExpressionType::USER_VARIABLE) {

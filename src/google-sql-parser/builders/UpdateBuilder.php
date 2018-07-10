@@ -47,9 +47,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class UpdateBuilder {
+class UpdateBuilder {
 
     public function build($parsed) {
         return "UPDATE " . $parsed[0]['table'];

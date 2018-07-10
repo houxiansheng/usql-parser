@@ -30,9 +30,9 @@
  * DAMAGE.
  */
 
-
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/SelectExpressionProcessor.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionType.php');
 
 /**
  * 
@@ -41,9 +41,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class OrderByProcessor extends AbstractProcessor {
+class OrderByProcessor extends AbstractProcessor {
 
     private $selectExpressionProcessor;
 

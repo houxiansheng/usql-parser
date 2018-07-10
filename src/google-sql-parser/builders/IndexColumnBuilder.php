@@ -39,8 +39,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnsupportedFeatureException.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 /**
  * This class implements the builder for index column entries of the column-list 
  * parts of CREATE TABLE. 
@@ -50,9 +50,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class IndexColumnBuilder {
+class IndexColumnBuilder {
 
     protected function buildLength($parsed) {
         return ($parsed === false ? '' : ('(' . $parsed . ')'));

@@ -30,8 +30,8 @@
  * DAMAGE.
  */
 
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/SQLChunkProcessor.php');
 
 /**
  * 
@@ -40,9 +40,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class SQLProcessor extends SQLChunkProcessor {
+class SQLProcessor extends SQLChunkProcessor {
 
     /*
      * This function breaks up the SQL statement into logical sections. 

@@ -30,11 +30,11 @@
  * DAMAGE.
  */
 
-
-
-
-
-
+require_once dirname(__FILE__) . '/AbstractProcessor.php';
+require_once dirname(__FILE__) . '/ColumnDefinitionProcessor.php';
+require_once dirname(__FILE__) . '/IndexColumnListProcessor.php';
+require_once dirname(__FILE__) . '/ReferenceDefinitionProcessor.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  *
@@ -43,9 +43,7 @@
  * @author arothe
  *
  */
-
- namespace USQL\GoogleSqlParser;
- class CreateDefinitionProcessor extends AbstractProcessor {
+class CreateDefinitionProcessor extends AbstractProcessor {
 
     protected function correctExpressionType(&$expr) {
         $type = ExpressionType::EXPRESSION;

@@ -30,9 +30,9 @@
  * DAMAGE.
  */
 
-
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/ColumnListProcessor.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionType.php');
 
 /**
  * 
@@ -41,9 +41,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class InsertProcessor extends AbstractProcessor {
+class InsertProcessor extends AbstractProcessor {
 
     public function process($tokenList, $token_category = 'INSERT') {
         $table = "";

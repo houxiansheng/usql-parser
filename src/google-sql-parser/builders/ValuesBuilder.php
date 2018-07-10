@@ -39,8 +39,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/RecordBuilder.php';
 
 /**
  * This class implements the builder for the VALUES part of INSERT statement. 
@@ -50,9 +50,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class ValuesBuilder {
+class ValuesBuilder {
 
     protected function buildRecord($parsed) {
         $builder = new RecordBuilder();

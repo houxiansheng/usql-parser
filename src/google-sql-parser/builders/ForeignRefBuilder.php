@@ -39,11 +39,11 @@
  * 
  */
 
-
-
-
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/TableBuilder.php';
+require_once dirname(__FILE__) . '/ReservedBuilder.php';
+require_once dirname(__FILE__) . '/ColumnListBuilder.php';
 
 /**
  * This class implements the builder for the FOREIGN KEY REFERENCES statement
@@ -54,9 +54,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class ForeignRefBuilder {
+class ForeignRefBuilder {
 
     protected function buildTable($parsed) {
         $builder = new TableBuilder();

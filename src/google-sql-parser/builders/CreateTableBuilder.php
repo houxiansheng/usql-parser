@@ -39,10 +39,10 @@
  * 
  */
 
-
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/CreateTableDefinitionBuilder.php';
+require_once dirname(__FILE__) . '/CreateTableSelectOptionBuilder.php';
+require_once dirname(__FILE__) . '/CreateTableOptionsBuilder.php';
 
 /**
  * This class implements the builder for the CREATE TABLE statement. You can overwrite
@@ -52,9 +52,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class CreateTableBuilder {
+class CreateTableBuilder {
 
     protected function buildCreateTableDefinition($parsed) {
         $builder = new CreateTableDefinitionBuilder();

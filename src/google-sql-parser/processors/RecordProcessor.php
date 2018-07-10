@@ -30,8 +30,8 @@
  * DAMAGE.
  */
 
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/ExpressionListProcessor.php');
 
 /**
  * 
@@ -40,9 +40,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class RecordProcessor extends AbstractProcessor {
+class RecordProcessor extends AbstractProcessor {
 
     private $expressionListProcessor;
 

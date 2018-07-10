@@ -39,14 +39,14 @@
  * 
  */
 
-
-
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ReservedBuilder.php';
+require_once dirname(__FILE__) . '/ConstantBuilder.php';
+require_once dirname(__FILE__) . '/EngineBuilder.php';
+require_once dirname(__FILE__) . '/FunctionBuilder.php';
+require_once dirname(__FILE__) . '/ProcedureBuilder.php';
+require_once dirname(__FILE__) . '/DatabaseBuilder.php';
+require_once dirname(__FILE__) . '/TableBuilder.php';
 
 /**
  * This class implements the builder for the SHOW statement. 
@@ -56,9 +56,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class ShowBuilder {
+class ShowBuilder {
 
     protected function buildTable($parsed, $delim) {
         $builder = new TableBuilder();

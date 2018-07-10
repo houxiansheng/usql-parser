@@ -39,9 +39,9 @@
  * 
  */
 
-
-
-
+require_once dirname(__FILE__) . '/SubTreeBuilder.php';
+require_once dirname(__FILE__) . '/AliasBuilder.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  * This class implements the builder for simple expressions within a SELECT statement. 
@@ -51,9 +51,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class SelectExpressionBuilder {
+class SelectExpressionBuilder {
 
     protected function buildSubTree($parsed, $delim) {
         $builder = new SubTreeBuilder();

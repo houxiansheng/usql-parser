@@ -39,10 +39,10 @@
  * 
  */
 
-
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/PositionBuilder.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
+require_once dirname(__FILE__) . '/FunctionBuilder.php';
 
 /**
  * This class implements the builder for the GROUP-BY clause. 
@@ -52,9 +52,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class GroupByBuilder {
+class GroupByBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

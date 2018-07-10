@@ -39,7 +39,7 @@
  * 
  */
 
-
+require_once dirname(__FILE__) . '/../exceptions/UnsupportedFeatureException.php';
 
 /**
  * This class implements the references type within a JOIN. 
@@ -49,9 +49,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class RefTypeBuilder {
+class RefTypeBuilder {
 
     public function build($parsed) {
         if ($parsed === false) {

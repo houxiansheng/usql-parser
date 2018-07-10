@@ -30,7 +30,7 @@
  * DAMAGE.
  */
 
-
+require_once(dirname(__FILE__) . '/InsertProcessor.php');
 
 /**
  * 
@@ -39,9 +39,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class ReplaceProcessor extends InsertProcessor {
+class ReplaceProcessor extends InsertProcessor {
 
     public function process($tokenList, $token_category = 'REPLACE') {
         return parent::process($tokenList, 'REPLACE');

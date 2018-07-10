@@ -39,8 +39,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/ConstantBuilder.php';
 
 /**
  * This class implements the builder for the constraint statement part of CREATE TABLE. 
@@ -50,9 +50,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class ConstraintBuilder {
+class ConstraintBuilder {
 
     protected function buildConstant($parsed) {
         $builder = new ConstantBuilder();

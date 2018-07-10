@@ -39,7 +39,7 @@
  * 
  */
 
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  * This class implements the builder for a database within SHOW statement. 
@@ -49,9 +49,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class EngineBuilder {
+class EngineBuilder {
 
     public function build($parsed) {
         if ($parsed['expr_type'] !== ExpressionType::ENGINE) {

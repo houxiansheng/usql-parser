@@ -39,8 +39,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/SubTreeBuilder.php';
 
 /**
  * This class implements the builder list of values for the IN statement. 
@@ -50,9 +50,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class InListBuilder {
+class InListBuilder {
 
     protected function buildSubTree($parsed, $delim) {
         $builder = new SubTreeBuilder();

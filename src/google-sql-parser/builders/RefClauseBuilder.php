@@ -39,10 +39,10 @@
  * 
  */
 
-
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
+require_once dirname(__FILE__) . '/OperatorBuilder.php';
+require_once dirname(__FILE__) . '/ConstantBuilder.php';
 
 /**
  * This class implements the references clause within a JOIN. 
@@ -52,9 +52,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class RefClauseBuilder {
+class RefClauseBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

@@ -39,16 +39,16 @@
  * 
  */
 
-
-
-
-
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
+require_once dirname(__FILE__) . '/ConstantBuilder.php';
+require_once dirname(__FILE__) . '/OperatorBuilder.php';
+require_once dirname(__FILE__) . '/FunctionBuilder.php';
+require_once dirname(__FILE__) . '/InListBuilder.php';
+require_once dirname(__FILE__) . '/WhereExpressionBuilder.php';
+require_once dirname(__FILE__) . '/WhereBracketExpressionBuilder.php';
+require_once dirname(__FILE__) . '/UserVariableBuilder.php';
 
 /**
  * This class implements the builder for expressions within the WHERE part. 
@@ -58,9 +58,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class WhereExpressionBuilder {
+class WhereExpressionBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

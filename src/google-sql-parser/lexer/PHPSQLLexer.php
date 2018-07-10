@@ -40,8 +40,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/LexerSplitter.php';
+require_once dirname(__FILE__) . '/../exceptions/InvalidParameterException.php';
 
 /**
  * This class splits the SQL string into little parts, which the parser can
@@ -51,9 +51,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *
  */
-
- namespace USQL\GoogleSqlParser;
- class PHPSQLLexer {
+class PHPSQLLexer {
 
     protected $splitters;
 

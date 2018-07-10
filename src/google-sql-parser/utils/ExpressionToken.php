@@ -1,10 +1,8 @@
 <?php
 
+require_once dirname(__FILE__) . '/ExpressionType.php';
 
-
-
- namespace USQL\GoogleSqlParser;
- class ExpressionToken {
+class ExpressionToken {
 
     private $subTree;
     private $expression;

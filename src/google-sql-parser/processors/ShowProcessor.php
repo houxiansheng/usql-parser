@@ -30,10 +30,10 @@
  * DAMAGE.
  */
 
-
-
-
-
+require_once(dirname(__FILE__) . '/../utils/PHPSQLParserConstants.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionType.php');
+require_once(dirname(__FILE__) . '/LimitProcessor.php');
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
 
 /**
  * 
@@ -42,9 +42,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class ShowProcessor extends AbstractProcessor {
+class ShowProcessor extends AbstractProcessor {
 
     private $limitProcessor;
 

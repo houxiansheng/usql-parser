@@ -39,16 +39,16 @@
  * 
  */
 
-
-
-
-
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/AliasBuilder.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
+require_once dirname(__FILE__) . '/ConstantBuilder.php';
+require_once dirname(__FILE__) . '/FunctionBuilder.php';
+require_once dirname(__FILE__) . '/ReservedBuilder.php';
+require_once dirname(__FILE__) . '/SelectExpressionBuilder.php';
+require_once dirname(__FILE__) . '/SelectBracketExpressionBuilder.php';
+require_once dirname(__FILE__) . '/DirectionBuilder.php';
 
 /**
  * This class implements the builder for function calls. 
@@ -58,9 +58,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class FunctionBuilder {
+class FunctionBuilder {
 
     protected function buildDirection($parsed) {
         $builder = new DirectionBuilder();

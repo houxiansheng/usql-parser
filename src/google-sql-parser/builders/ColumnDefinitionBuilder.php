@@ -39,10 +39,10 @@
  * 
  */
 
-
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
+require_once dirname(__FILE__) . '/ColumnTypeBuilder.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 /**
  * This class implements the builder for the columndefinition statement part 
  * of CREATE TABLE. You can overwrite all functions to achieve another handling.
@@ -51,9 +51,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class ColumnDefinitionBuilder {
+class ColumnDefinitionBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

@@ -39,8 +39,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
 
 /**
  * This class implements the builder for the [INSERT] statement parts. 
@@ -50,9 +50,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class InsertBuilder {
+class InsertBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

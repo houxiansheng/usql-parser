@@ -30,9 +30,9 @@
  * DAMAGE.
  */
 
-
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/CreateDefinitionProcessor.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionType.php');
 
 /**
  *
@@ -41,9 +41,7 @@
  * @author arothe
  *
  */
-
- namespace USQL\GoogleSqlParser;
- class TableProcessor extends AbstractProcessor {
+class TableProcessor extends AbstractProcessor {
 
     protected function getReservedType($token) {
         return array('expr_type' => ExpressionType::RESERVED, 'base_expr' => $token);

@@ -30,7 +30,7 @@
  * DAMAGE.
  */
 
-
+require_once(dirname(__FILE__) . '/ExplainProcessor.php');
 
 /**
  * 
@@ -39,9 +39,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class DescProcessor extends ExplainProcessor {
+class DescProcessor extends ExplainProcessor {
 
     protected function isStatement($keys, $needle = "DESC") {
         return parent::isStatement($keys, $needle);

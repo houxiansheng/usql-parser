@@ -30,10 +30,10 @@
  * DAMAGE.
  */
 
-
-
-
-
+require_once dirname(__FILE__) . '/AbstractProcessor.php';
+require_once dirname(__FILE__) . '/ReferenceDefinitionProcessor.php';
+require_once dirname(__FILE__) . '/ExpressionListProcessor.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  *
@@ -42,9 +42,7 @@
  * @author arothe
  *
  */
-
- namespace USQL\GoogleSqlParser;
- class ColumnDefinitionProcessor extends AbstractProcessor {
+class ColumnDefinitionProcessor extends AbstractProcessor {
 
     protected function processExpressionList($parsed) {
         $processor = new ExpressionListProcessor();

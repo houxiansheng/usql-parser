@@ -31,8 +31,8 @@
  * DAMAGE.
  */
 
-
-
+require_once dirname(__FILE__) . '/../utils/PHPSQLParserConstants.php';
+require_once dirname(__FILE__) . '/../exceptions/UnableToCalculatePositionException.php';
 
 /**
  * This class calculates the positions  
@@ -41,9 +41,7 @@
  * @author arothe <andre.rothe@phosco.info>
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class PositionCalculator {
+class PositionCalculator {
 
     private static $_allowedOnOperator = array("\t", "\n", "\r", " ", ",", "(", ")", "_", "'", "\"");
     private static $_allowedOnOther = array("\t", "\n", "\r", " ", ",", "(", ")", "<", ">", "*", "+", "-", "/", "|",

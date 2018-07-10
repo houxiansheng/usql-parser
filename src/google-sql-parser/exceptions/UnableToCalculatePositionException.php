@@ -39,9 +39,7 @@
  * @author arothe
  *
  */
-
- namespace USQL\GoogleSqlParser;
- class UnableToCalculatePositionException extends Exception {
+class UnableToCalculatePositionException extends Exception {
 
     protected $needle;
     protected $haystack;

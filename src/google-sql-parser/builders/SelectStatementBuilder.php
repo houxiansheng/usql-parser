@@ -39,12 +39,12 @@
  * 
  */
 
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/LimitBuilder.php';
+require_once dirname(__FILE__) . '/SelectBuilder.php';
+require_once dirname(__FILE__) . '/FromBuilder.php';
+require_once dirname(__FILE__) . '/WhereBuilder.php';
+require_once dirname(__FILE__) . '/GroupByBuilder.php';
+require_once dirname(__FILE__) . '/OrderByBuilder.php';
 
 /**
  * This class implements the builder for the whole Select statement. You can overwrite
@@ -54,9 +54,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class SelectStatementBuilder {
+class SelectStatementBuilder {
 
     protected function buildSELECT($parsed) {
         $builder = new SelectBuilder();

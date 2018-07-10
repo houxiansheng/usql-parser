@@ -39,8 +39,8 @@
  * 
  */
 
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/DirectionBuilder.php';
 
 /**
  * This class implements the builder for an alias within the ORDER-BY clause. 
@@ -50,9 +50,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class OrderByAliasBuilder {
+class OrderByAliasBuilder {
 
     protected function buildDirection($parsed) {
         $builder = new DirectionBuilder();

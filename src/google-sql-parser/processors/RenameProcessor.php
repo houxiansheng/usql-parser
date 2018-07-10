@@ -30,9 +30,9 @@
  * DAMAGE.
  */
 
-
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionToken.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionType.php');
 
 /**
  * 
@@ -41,9 +41,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class RenameProcessor extends AbstractProcessor {
+class RenameProcessor extends AbstractProcessor {
 
     public function process($tokenList) {
         $base_expr = "";

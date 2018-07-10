@@ -30,8 +30,8 @@
  * DAMAGE.
  */
 
-
-
+require_once(dirname(__FILE__) . '/AbstractProcessor.php');
+require_once(dirname(__FILE__) . '/../utils/ExpressionType.php');
 
 /**
  * 
@@ -40,9 +40,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class ExplainProcessor extends AbstractProcessor {
+class ExplainProcessor extends AbstractProcessor {
 
     protected function isStatement($keys, $needle = "EXPLAIN") {
         $pos = array_search($needle, $keys);

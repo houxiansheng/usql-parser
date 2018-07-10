@@ -39,7 +39,7 @@
  * 
  */
 
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
 
 /**
  * This class implements the builder LIMIT statement. 
@@ -49,9 +49,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class LimitBuilder {
+class LimitBuilder {
 
     public function build($parsed) {
         $sql = ($parsed['offset'] ? $parsed['offset'] . ", " : "") . $parsed['rowcount'];

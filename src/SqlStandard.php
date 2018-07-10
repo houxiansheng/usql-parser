@@ -2,9 +2,7 @@
 namespace USQL;
 
 use USQL\SqlRestraint\Restraint;
-
-
-
+require_once dirname(__FILE__) . '/google-sql-parser/PHPSQLParser.php';
 
 class SqlStandard
 {

@@ -30,8 +30,8 @@
  * DAMAGE.
  */
 
-
-
+require_once dirname(__FILE__) . '/AbstractProcessor.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  * 
@@ -40,9 +40,7 @@
  * @author arothe
  * 
  */
-
- namespace USQL\GoogleSqlParser;
- class ColumnListProcessor extends AbstractProcessor {
+class ColumnListProcessor extends AbstractProcessor {
 
     public function process($tokens) {
         $columns = explode(",", $tokens);

@@ -39,9 +39,9 @@
  * 
  */
 
-
-
-
+require_once dirname(__FILE__) . '/WhereBuilder.php';
+require_once dirname(__FILE__) . '/FromBuilder.php';
+require_once dirname(__FILE__) . '/DeleteBuilder.php';
 
 /**
  * This class implements the builder for the whole Delete statement. You can overwrite
@@ -51,9 +51,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class DeleteStatementBuilder {
+class DeleteStatementBuilder {
 
     protected function buildWHERE($parsed) {
         $builder = new WhereBuilder();

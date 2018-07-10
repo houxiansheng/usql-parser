@@ -39,7 +39,7 @@
  * 
  */
 
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  * This class implements the builder for the data-type statement part of CREATE TABLE. 
@@ -49,9 +49,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class DataTypeBuilder {
+class DataTypeBuilder {
 
     public function build($parsed) {
         if ($parsed['expr_type'] !== ExpressionType::DATA_TYPE) {

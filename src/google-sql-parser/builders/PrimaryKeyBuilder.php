@@ -39,14 +39,14 @@
  * 
  */
 
-
-
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ColumnListBuilder.php';
+require_once dirname(__FILE__) . '/ConstraintBuilder.php';
+require_once dirname(__FILE__) . '/ReservedBuilder.php';
+require_once dirname(__FILE__) . '/IndexTypeBuilder.php';
+require_once dirname(__FILE__) . '/IndexSizeBuilder.php';
+require_once dirname(__FILE__) . '/IndexParserBuilder.php';
 
 /**
  * This class implements the builder for the PRIMARY KEY  statement part of CREATE TABLE. 
@@ -56,9 +56,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class PrimaryKeyBuilder {
+class PrimaryKeyBuilder {
 
     protected function buildColumnList($parsed) {
         $builder = new ColumnListBuilder();

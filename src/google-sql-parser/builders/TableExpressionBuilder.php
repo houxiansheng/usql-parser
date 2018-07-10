@@ -39,12 +39,12 @@
  * 
  */
 
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
+require_once dirname(__FILE__) . '/AliasBuilder.php';
+require_once dirname(__FILE__) . '/JoinBuilder.php';
+require_once dirname(__FILE__) . '/RefTypeBuilder.php';
+require_once dirname(__FILE__) . '/RefClauseBuilder.php';
+require_once dirname(__FILE__) . '/FromBuilder.php';
 
 /**
  * This class implements the builder for the table name and join options. 
@@ -54,9 +54,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class TableExpressionBuilder {
+class TableExpressionBuilder {
 
     protected function buildFROM($parsed) {
         $builder = new FromBuilder();

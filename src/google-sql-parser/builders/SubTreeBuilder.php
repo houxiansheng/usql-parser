@@ -39,15 +39,15 @@
  * 
  */
 
-
-
-
-
-
-
-
-
-
+require_once dirname(__FILE__) . '/../exceptions/UnableToCreateSQLException.php';
+require_once dirname(__FILE__) . '/ReservedBuilder.php';
+require_once dirname(__FILE__) . '/SelectBracketExpressionBuilder.php';
+require_once dirname(__FILE__) . '/ColumnReferenceBuilder.php';
+require_once dirname(__FILE__) . '/FunctionBuilder.php';
+require_once dirname(__FILE__) . '/OperatorBuilder.php';
+require_once dirname(__FILE__) . '/ConstantBuilder.php';
+require_once dirname(__FILE__) . '/SubQueryBuilder.php';
+require_once dirname(__FILE__) . '/../utils/ExpressionType.php';
 
 /**
  * This class implements the builder for [sub_tree] fields. 
@@ -57,9 +57,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class SubTreeBuilder {
+class SubTreeBuilder {
 
     protected function buildColRef($parsed) {
         $builder = new ColumnReferenceBuilder();

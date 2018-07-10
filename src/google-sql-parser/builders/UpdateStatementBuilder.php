@@ -39,9 +39,9 @@
  * 
  */
 
-
-
-
+require_once dirname(__FILE__) . '/WhereBuilder.php';
+require_once dirname(__FILE__) . '/SetBuilder.php';
+require_once dirname(__FILE__) . '/UpdateBuilder.php';
 
 /**
  * This class implements the builder for the whole Update statement. You can overwrite
@@ -51,9 +51,7 @@
  * @license http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
  *  
  */
-
- namespace USQL\GoogleSqlParser;
- class UpdateStatementBuilder {
+class UpdateStatementBuilder {
 
     protected function buildWHERE($parsed) {
         $builder = new WhereBuilder();
