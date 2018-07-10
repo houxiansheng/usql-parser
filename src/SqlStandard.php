@@ -1,7 +1,7 @@
 <?php
 namespace USQL;
 
-use USQLSqlRestraint\Restraint;
+use USQL\SqlRestraint\Restraint;
 
 
 

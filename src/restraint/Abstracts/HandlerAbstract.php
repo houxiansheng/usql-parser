@@ -1,8 +1,8 @@
 <?php
-namespace USQLSqlRestraint\Abstracts;
+namespace USQL\SqlRestraint\Abstracts;
 
-use USQLSqlRestraint\Common\ErrorLog;
-use USQLSqlRestraint\Common\CommonTool;
+use USQL\SqlRestraint\Common\ErrorLog;
+use USQL\SqlRestraint\Common\CommonTool;
 
 abstract class HandlerAbstract
 {

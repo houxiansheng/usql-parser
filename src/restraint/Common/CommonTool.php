@@ -1,5 +1,5 @@
 <?php
-namespace USQLSqlRestraint\Common;
+namespace USQL\SqlRestraint\Common;
 
 class CommonTool
 {

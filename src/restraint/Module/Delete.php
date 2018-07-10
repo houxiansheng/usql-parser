@@ -1,8 +1,8 @@
 <?php
-namespace USQLSqlRestraint\Module;
+namespace USQL\SqlRestraint\Module;
 
-use USQLSqlRestraint\Abstracts\HandlerAbstract;
-use USQLSqlRestraint\Common\ErrorLog;
+use USQL\SqlRestraint\Abstracts\HandlerAbstract;
+use USQL\SqlRestraint\Common\ErrorLog;
 
 class Delete extends HandlerAbstract
 {

@@ -1,7 +1,7 @@
 <?php
-namespace USQLSqlRestraint\Module;
+namespace USQL\SqlRestraint\Module;
 
-use USQLSqlRestraint\Abstracts\HandlerAbstract;
+use USQL\SqlRestraint\Abstracts\HandlerAbstract;
 
 class Order extends HandlerAbstract
 {
