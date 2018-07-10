@@ -1,7 +1,7 @@
 <?php
-namespace App\Library\PhpSqlParser;
+namespace USQL;
 
-use SqlRestraint\Restraint;
+use USQLSqlRestraint\Restraint;
 
 
 

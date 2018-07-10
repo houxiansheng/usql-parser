@@ -1,7 +1,7 @@
 <?php
-namespace SqlRestraint\Module;
+namespace USQLSqlRestraint\Module;
 
-use SqlRestraint\Abstracts\HandlerAbstract;
+use USQLSqlRestraint\Abstracts\HandlerAbstract;
 
 class Group extends HandlerAbstract
 {

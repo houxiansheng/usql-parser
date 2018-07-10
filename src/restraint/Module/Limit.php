@@ -1,8 +1,8 @@
 <?php
-namespace SqlRestraint\Module;
+namespace USQLSqlRestraint\Module;
 
-use SqlRestraint\Abstracts\HandlerAbstract;
-use SqlRestraint\Common\ErrorLog;
+use USQLSqlRestraint\Abstracts\HandlerAbstract;
+use USQLSqlRestraint\Common\ErrorLog;
 
 class Limit extends HandlerAbstract
 {

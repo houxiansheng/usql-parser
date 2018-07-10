@@ -1,5 +1,5 @@
 <?php
-namespace SqlRestraint;
+namespace USQLSqlRestraint;
 
 
 
