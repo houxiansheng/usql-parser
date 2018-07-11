@@ -2,7 +2,7 @@
 namespace USQL;
 
 use USQL\SqlRestraint\Restraint;
-require_once dirname(__FILE__) . '/google-sql-parser/PHPSQLParser.php';
+use USQL\GoogleSqlParser\PHPSQLParser;
 
 class SqlStandard
 {
@@ -15,7 +15,7 @@ class SqlStandard
 
     private function __construct()
     {
-        $this->phpSqlParser = new \PHPSQLParser(false, false);
+        $this->phpSqlParser = new PHPSQLParser(false, false);
         $this->restraint = new Restraint();
     }
 

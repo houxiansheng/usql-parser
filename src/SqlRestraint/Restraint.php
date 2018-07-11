@@ -23,13 +23,13 @@ class Restraint
 
     protected function register($type, $className)
     {
-        $this->register[$type] = new $className();
+        $this->register[$type]['className'] = $className;
     }
 
     public function hander($parseArr)
     {
         foreach ($parseArr as $key => $val) {
-            if ($this->register[$key]) {
+            if ($this->getHandleObject($key)) {
                 $this->recursion($key, $val);
             }
         }
@@ -41,16 +41,16 @@ class Restraint
     protected function recursion($module, $content)
     {
         if ($module == 'LIMIT') {
-            $res = $this->register[$module]->handler(0, $content);
+            $res = $this->getHandleObject($module)->handler(0, $content);
             return;
         }
         if ($module == 'DELETE') {
-            $res = $this->register[$module]->handler(0, $content);
+            $res = $this->getHandleObject($module)->handler(0, $content);
             return;
         }
         foreach ($content as $key => $val) {
             if (is_numeric($key)) {
-                $res = $this->register[$module]->handler($key, $val);
+                $res = $this->getHandleObject($module)->handler($key, $val);
                 if ($res == CHECK_RECURION) {
                     // 此时一般都遍历subTree
                     foreach ($val['sub_tree'] as $subKey => $subVal) {
@@ -61,5 +61,13 @@ class Restraint
                 $this->recursion($key, $val);
             }
         }
+    }
+
+    protected function getHandleObject($module)
+    {
+        if (! is_object($this->register[$module]['object'])) {
+            $this->register[$module]['object'] = new $this->register[$module]['className']();
+        }
+        return $this->register[$module]['object'];
     }
 }
