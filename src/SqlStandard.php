@@ -34,6 +34,7 @@ class SqlStandard
     /**
      * 处理sql语句
      *
+     *@param string $dbName
      * @param string $sql            
      * @return array [
      *         'code' => '错误码0:正常1：SQL语句异常',
@@ -46,7 +47,7 @@ class SqlStandard
      *         ]
      *         ]
      */
-    public function handler($sql)
+    public function handler($dbName,$sql)
     {
         $data=[
             'db'=>$dbName,
