@@ -48,7 +48,11 @@ class SqlStandard
      */
     public function handler($sql)
     {
-        HistorySql::write($sql);
+        $data=[
+            'db'=>$dbName,
+            'sql'=>$sql
+        ];
+        HistorySql::write($data);
         try {
             $parser = $this->phpSqlParser->parse($sql, true);
             $res = $this->restraint->hander($parser);
