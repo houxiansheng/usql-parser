@@ -54,7 +54,7 @@ class SqlStandard
             $res = $this->restraint->hander($parser);
             $return = [
                 'code' => 0,
-                'errMsg' => '成功',
+                'errMsg' => 'success',
                 'data' => [
                     'parser' => $parser,
                     'msg' => $res
@@ -77,9 +77,27 @@ class SqlStandard
         $sql = HistorySql::get();
         if (is_array($sql) && $sql) {
             try {
-                $producerAdapt = new producerAdapt();
-                $res = $producerAdapt->send($topicName, $sql);
+                $data = [
+                    'sql' => json_encode($sql)
+                ];
+                // 临时替换为curl方式
+                $res = $this->sendCurl($data);
+                // $producerAdapt = new producerAdapt();
+                // $res = $producerAdapt->send($topicName, $data);
             } catch (\Exception $e) {}
         }
+    }
+
+    private function sendCurl($data)
+    {
+        $url = 'http://mysqlparser.com/api/kafka/sql';
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        return $output;
     }
 }
