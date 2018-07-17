@@ -34,7 +34,7 @@ class SqlStandard
     /**
      * 处理sql语句
      *
-     *@param string $dbName
+     * @param string $dbName            
      * @param string $sql            
      * @return array [
      *         'code' => '错误码0:正常1：SQL语句异常',
@@ -47,11 +47,14 @@ class SqlStandard
      *         ]
      *         ]
      */
-    public function handler($dbName,$sql)
+    public function handler($dbName, $query, $bindings)
     {
-        $data=[
-            'db'=>$dbName,
-            'sql'=>$sql
+        $sql = str_replace("?", "'%s'", $query);
+        $sql = vsprintf($sql, $bindings);
+        $data = [
+            'db' => $dbName,
+            'query' => $sql,
+            'bindings' => $bindings
         ];
         HistorySql::write($data);
         try {
