@@ -34,7 +34,32 @@ class SqlStandard
     }
 
     /**
-     * 处理sql语句
+     * 仅收集sql不分析
+     * 
+     * @param string $dbName            
+     * @param string $sql            
+     * @param array $extraInfo
+     *            [
+     *            'pname' => '项目名字（gap.youxinjinrong.com）',
+     *            'host' => '域名（test.youxinjinrong.com）',
+     *            'uri' => '访问路径（/test/redis）'
+     *            ]
+     * @return boolean
+     */
+    public function collect($dbName, $query, $bindings, array $extraInfo = [])
+    {
+        $data = [
+            'db' => $dbName,
+            'query' => $query,
+            'bindings' => $bindings
+        ];
+        HistorySql::write($data);
+        $this->extraInfo = $extraInfo;
+        return true;
+    }
+
+    /**
+     * 收集和分析sql
      *
      * @param string $dbName            
      * @param string $sql            
@@ -67,6 +92,52 @@ class SqlStandard
         try {
             $sql = str_replace("?", "'%s'", $query);
             $sql = vsprintf($sql, $bindings);
+            $parser = $this->phpSqlParser->parse($sql, true);
+            $res = $this->restraint->hander($parser);
+            $return = [
+                'code' => 0,
+                'errMsg' => 'success',
+                'data' => [
+                    'parser' => $parser,
+                    'msg' => $res
+                ]
+            ];
+        } catch (\Exception $e) {
+            $return = [
+                'code' => 1,
+                'errMsg' => $e->getMessage(),
+                'data' => []
+            
+            ];
+        }
+        return $return;
+    }
+
+    /**
+     * 直接分析sql，返回结果
+     *
+     * @param string $dbName            
+     * @param string $sql            
+     * @param array $extraInfo
+     *            [
+     *            'pname' => '项目名字（gap.youxinjinrong.com）',
+     *            'host' => '域名（test.youxinjinrong.com）',
+     *            'uri' => '访问路径（/test/redis）'
+     *            ]
+     * @return array [
+     *         'code' => '错误码0:正常1：SQL语句异常',
+     *         'errMsg' => '错误信息',
+     *         'data' => [
+     *         'parser' => 'sql解析后的结构',
+     *         'msg' => [
+     *         '不符合规范地方'
+     *         ]
+     *         ]
+     *         ]
+     */
+    public function parser($sql)
+    {
+        try {
             $parser = $this->phpSqlParser->parse($sql, true);
             $res = $this->restraint->hander($parser);
             $return = [
