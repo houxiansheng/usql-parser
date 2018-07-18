@@ -14,10 +14,10 @@ class Limit extends HandlerAbstract
         $offset = intval($fields['offset']);
         $rowcount = intval($fields['rowcount']);
         if ($offset > 1000) {
-            ErrorLog::writeLog($this->module . '-offset-' . $offset);
+            ErrorLog::writeLog('2-' . $this->module . '-offset-' . $offset);
         }
         if ($rowcount > 10000) {
-            ErrorLog::writeLog($this->module . '-rowcount-' . $rowcount);
+            ErrorLog::writeLog('2-' . $this->module . '-rowcount-' . $rowcount);
         }
         return CHECK_SUCCESS;
     }

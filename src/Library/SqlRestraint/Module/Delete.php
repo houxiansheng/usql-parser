@@ -11,7 +11,7 @@ class Delete extends HandlerAbstract
 
     public function handler($index, array $fields)
     {
-        ErrorLog::writeLog('delete');
+        ErrorLog::writeLog('5-delete');
         $res = CHECK_SUCCESS;
         return $res;
     }

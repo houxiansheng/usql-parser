@@ -52,7 +52,7 @@ abstract class HandlerAbstract
                 $res = $this->inList($index, $fields);
                 break;
             default:
-                ErrorLog::writeLog('untreated-' . $this->module . '-' . $fields['expr_type']);
+                ErrorLog::writeLog('1-' . $this->module . '-' . $fields['expr_type']);
                 break;
         }
         return $res;
@@ -81,21 +81,21 @@ abstract class HandlerAbstract
     {
         // 别称定义
         if (isset($fields['alias']) && $fields['alias'] && CommonTool::keyWord($fields['alias']['no_quotes'])) {
-            ErrorLog::writeLog($this->module . '-alias-' . $fields['alias']['no_quotes']);
+            ErrorLog::writeLog('2-' . $this->module . '-alias-' . $fields['alias']['no_quotes']);
         }
         if (isset($fields['base_expr']) && $fields['base_expr'] && $fields['base_expr'] == '*') {
-            ErrorLog::writeLog($this->module . '-*');
+            ErrorLog::writeLog('4-' . $this->module . '-*');
         }
     }
 
     protected function aggregateFun($index, $fields)
     {
         if (isset($fields['alias']) && $fields['alias'] && CommonTool::keyWord($fields['alias']['no_quotes'])) {
-            ErrorLog::writeLog($this->module . '-alias-' . $fields['alias']['no_quotes']);
+            ErrorLog::writeLog('2-' . $this->module . '-alias-' . $fields['alias']['no_quotes']);
         }
         // 判断下函数是否禁用
         if (CommonTool::math($fields['base_expr'])) {
-            ErrorLog::writeLog($this->module . '-fun-' . $fields['base_expr']);
+            ErrorLog::writeLog('3-' . $this->module . '-fun-' . $fields['base_expr']);
         }
         if (isset($fields['sub_tree']) && $fields['sub_tree']) {
             foreach ($fields['sub_tree'] as $key => $val) {
@@ -108,10 +108,10 @@ abstract class HandlerAbstract
     protected function function($index, $fields)
     {
         if ($this->module == 'where') { // where下禁用一切函数,暂不考虑左侧还是右侧
-            ErrorLog::writeLog($this->module . '-fun-' . $fields['base_expr']);
+            ErrorLog::writeLog('3-' . $this->module . '-fun-' . $fields['base_expr']);
         } else {
             if (CommonTool::math($fields['base_expr'])) {
-                ErrorLog::writeLog($this->module . '-fun-' . $fields['base_expr']);
+                ErrorLog::writeLog('3-' . $this->module . '-fun-' . $fields['base_expr']);
             }
         }
         if (isset($fields['sub_tree']) && $fields['sub_tree']) {
@@ -130,10 +130,10 @@ abstract class HandlerAbstract
             }
         }
         if ($index >= 2) {
-            ErrorLog::writeLog($this->module . '-join-max');
+            ErrorLog::writeLog('5-' . $this->module . '-join-max');
         }
         if (isset($fields['alias']) && $fields['alias'] && CommonTool::keyWord($fields['alias']['no_quotes'])) {
-            ErrorLog::writeLog($this->module . '-alias-' . $fields['alias']['no_quotes']);
+            ErrorLog::writeLog('2-' . $this->module . '-alias-' . $fields['alias']['no_quotes']);
         }
         return CHECK_SUCCESS;
     }
@@ -148,7 +148,7 @@ abstract class HandlerAbstract
             'like'
         ];
         if (in_array($fields['base_expr'], $tmp)) {
-            ErrorLog::writeLog($this->module . '-operator-' . $fields['base_expr']);
+            ErrorLog::writeLog('3-' . $this->module . '-operator-' . $fields['base_expr']);
         }
         return CHECK_SUCCESS;
     }
@@ -157,7 +157,7 @@ abstract class HandlerAbstract
     {
         $inMaxNum = 1000;
         if (isset($fields['sub_tree']) && $fields['sub_tree'] && count($fields['sub_tree']) > $inMaxNum) {
-            ErrorLog::writeLog($this->module . '-in-list-max');
+            ErrorLog::writeLog('3-' . $this->module . '-in-list-max');
         }
         return CHECK_SUCCESS;
     }
