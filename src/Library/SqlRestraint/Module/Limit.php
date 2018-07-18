@@ -3,6 +3,7 @@ namespace USQL\Library\SqlRestraint\Module;
 
 use USQL\Library\SqlRestraint\Abstracts\HandlerAbstract;
 use USQL\Library\SqlRestraint\Common\ErrorLog;
+use USQL\Library\SqlRestraint\Common\GlobalVar;
 
 class Limit extends HandlerAbstract
 {
@@ -19,6 +20,6 @@ class Limit extends HandlerAbstract
         if ($rowcount > 10000) {
             ErrorLog::writeLog('2-' . $this->module . '-rowcount-' . $rowcount);
         }
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 }

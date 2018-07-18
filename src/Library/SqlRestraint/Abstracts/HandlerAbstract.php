@@ -3,6 +3,7 @@ namespace USQL\Library\SqlRestraint\Abstracts;
 
 use USQL\Library\SqlRestraint\Common\ErrorLog;
 use USQL\Library\SqlRestraint\Common\CommonTool;
+use USQL\Library\SqlRestraint\Common\GlobalVar;
 
 abstract class HandlerAbstract
 {
@@ -13,22 +14,22 @@ abstract class HandlerAbstract
     {
         switch ($fields['expr_type']) {
             case 'subquery': // 存在子查询，返回继续遍历
-                $res = CHECK_RECURION;
+                $res = GlobalVar::$CHECK_RECURION;
                 break;
             case 'match-arguments':
                 $res = $this->matchArguments($index, $fields);
                 break;
             case 'match-mode':
-                $res = CHECK_SUCCESS;
+                $res = GlobalVar::$CHECK_SUCCESS;
                 break;
             case 'colref': // 列名
                 $res = $this->colRef($index, $fields);
                 break;
             case 'reserved': // 保留字段
-                $res = CHECK_SUCCESS;
+                $res = GlobalVar::$CHECK_SUCCESS;
                 break;
             case 'const': // 常量
-                $res = CHECK_SUCCESS;
+                $res = GlobalVar::$CHECK_SUCCESS;
                 break;
             case 'expression': // 表达式
                 $res = $this->expression($index, $fields);
@@ -74,7 +75,7 @@ abstract class HandlerAbstract
                 $this->handler($key, $val);
             }
         }
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 
     protected function colRef($index, $fields)
@@ -102,7 +103,7 @@ abstract class HandlerAbstract
                 $this->handler($key, $val);
             }
         }
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 
     protected function function($index, $fields)
@@ -119,7 +120,7 @@ abstract class HandlerAbstract
                 $this->handler($key, $val);
             }
         }
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 
     protected function table($index, $fields)
@@ -135,7 +136,7 @@ abstract class HandlerAbstract
         if (isset($fields['alias']) && $fields['alias'] && CommonTool::keyWord($fields['alias']['no_quotes'])) {
             ErrorLog::writeLog('2-' . $this->module . '-alias-' . $fields['alias']['no_quotes']);
         }
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 
     protected function operator($index, $fields)
@@ -150,7 +151,7 @@ abstract class HandlerAbstract
         if (in_array($fields['base_expr'], $tmp)) {
             ErrorLog::writeLog('3-' . $this->module . '-operator-' . $fields['base_expr']);
         }
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 
     protected function inList($index, $fields)
@@ -159,7 +160,7 @@ abstract class HandlerAbstract
         if (isset($fields['sub_tree']) && $fields['sub_tree'] && count($fields['sub_tree']) > $inMaxNum) {
             ErrorLog::writeLog('3-' . $this->module . '-in-list-max');
         }
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 
     protected function bracketExpression($index, $fields)
@@ -169,6 +170,6 @@ abstract class HandlerAbstract
                 $this->handler($key, $val);
             }
         }
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 }

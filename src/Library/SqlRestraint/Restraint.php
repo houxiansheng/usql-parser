@@ -1,6 +1,8 @@
 <?php
 namespace USQL\Library\SqlRestraint;
 
+use USQL\Library\SqlRestraint\Common\GlobalVar;
+
 class Restraint
 {
 
@@ -23,7 +25,10 @@ class Restraint
 
     protected function register($type, $className)
     {
-        $this->register[$type]['className'] = $className;
+        $this->register[$type] = [
+            'className' => $className,
+            'object' => ''
+        ];
     }
 
     public function hander($parseArr)
@@ -51,12 +56,12 @@ class Restraint
         foreach ($content as $key => $val) {
             if (is_numeric($key)) {
                 $res = $this->getHandleObject($module)->handler($key, $val);
-                if ($res == CHECK_RECURION) {
+                if ($res == GlobalVar::$CHECK_RECURION) {
                     // 此时一般都遍历subTree
                     foreach ($val['sub_tree'] as $subKey => $subVal) {
                         $this->recursion($subKey, $subVal);
                     }
-                } elseif ($res == CHECK_FAIL) {}
+                } elseif ($res == GlobalVar::$CHECK_FAIL) {}
             } else {
                 $this->recursion($key, $val);
             }

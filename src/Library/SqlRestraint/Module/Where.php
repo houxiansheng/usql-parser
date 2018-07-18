@@ -3,6 +3,7 @@ namespace USQL\Library\SqlRestraint\Module;
 
 use USQL\Library\SqlRestraint\Abstracts\HandlerAbstract;
 use USQL\Library\SqlRestraint\Common\ErrorLog;
+use USQL\Library\SqlRestraint\Common\GlobalVar;
 
 class Where extends HandlerAbstract
 {
@@ -12,6 +13,6 @@ class Where extends HandlerAbstract
     protected function aggregateFun($index, $fields)
     {
         ErrorLog::writeLog('3-' . $this->module . '-fun-' . $fields['base_expr']);
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 }

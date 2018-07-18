@@ -2,6 +2,7 @@
 namespace USQL\Library\SqlRestraint\Module;
 
 use USQL\Library\SqlRestraint\Abstracts\HandlerAbstract;
+use USQL\Library\SqlRestraint\Common\GlobalVar;
 
 class Group extends HandlerAbstract
 {
@@ -10,6 +11,6 @@ class Group extends HandlerAbstract
 
     public function handler($index, array $fields)
     {
-        return CHECK_SUCCESS;
+        return GlobalVar::$CHECK_SUCCESS;
     }
 }
