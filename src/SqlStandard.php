@@ -16,6 +16,8 @@ class SqlStandard
 
     private $restraint = null;
 
+    private $extraInfo = [];
+
     private function __construct()
     {
         $this->phpSqlParser = new PHPSQLParser(false, false);
@@ -36,6 +38,12 @@ class SqlStandard
      *
      * @param string $dbName            
      * @param string $sql            
+     * @param array $extraInfo
+     *            [
+     *            'pname' => '项目名字（gap.youxinjinrong.com）',
+     *            'host' => '域名（test.youxinjinrong.com）',
+     *            'uri' => '访问路径（/test/redis）'
+     *            ]
      * @return array [
      *         'code' => '错误码0:正常1：SQL语句异常',
      *         'errMsg' => '错误信息',
@@ -47,17 +55,18 @@ class SqlStandard
      *         ]
      *         ]
      */
-    public function handler($dbName, $query, $bindings)
+    public function handler($dbName, $query, $bindings, array $extraInfo = [])
     {
-        $sql = str_replace("?", "'%s'", $query);
-        $sql = vsprintf($sql, $bindings);
         $data = [
             'db' => $dbName,
             'query' => $query,
             'bindings' => $bindings
         ];
         HistorySql::write($data);
+        $this->extraInfo = $extraInfo;
         try {
+            $sql = str_replace("?", "'%s'", $query);
+            $sql = vsprintf($sql, $bindings);
             $parser = $this->phpSqlParser->parse($sql, true);
             $res = $this->restraint->hander($parser);
             $return = [
@@ -86,6 +95,7 @@ class SqlStandard
         if (is_array($sql) && $sql) {
             try {
                 $data = [
+                    'extra' => json_encode($this->getExtraInfo()),
                     'sql' => json_encode($sql)
                 ];
                 // 临时替换为curl方式
@@ -107,5 +117,35 @@ class SqlStandard
         $output = curl_exec($ch);
         curl_close($ch);
         return $output;
+    }
+
+    private function getExtraInfo()
+    {
+        if (isset($_SERVER['DOCUMENT_ROOT']) || isset($_SERVER['PWD'])) {
+            $root = $_SERVER['DOCUMENT_ROOT'] ? $_SERVER['DOCUMENT_ROOT'] : $_SERVER['PWD'];
+            $dir = explode('/', __DIR__);
+            $root = explode('/', $root);
+            $array_intersect = array_intersect($dir, $root);
+            $projectName = array_pop($array_intersect);
+        } else {
+            $projectName = '';
+        }
+        if (isset($_SERVER['REQUEST_URI'])) {
+            $uri = $_SERVER['REQUEST_URI'];
+        } elseif ($_SERVER['PHP_SELF'] == 'artisan') {
+            $uri = '/' . implode('/', $_SERVER['argv']);
+        } else {
+            $uri = '';
+        }
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $host = $_SERVER['HTTP_HOST'];
+        } else {
+            $host = 'script';
+        }
+        $uriArr = explode('?', $uri);
+        $this->extraInfo['pname'] = isset($this->extraInfo['pname']) ? $this->extraInfo['pname'] : $projectName;
+        $this->extraInfo['host'] = isset($this->extraInfo['host']) ? $this->extraInfo['host'] : $host;
+        $this->extraInfo['uri'] = isset($this->extraInfo['uri']) ? $this->extraInfo['uri'] : $uriArr[0];
+        return $this->extraInfo;
     }
 }
