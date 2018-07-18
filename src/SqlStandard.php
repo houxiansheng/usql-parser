@@ -53,7 +53,7 @@ class SqlStandard
         $sql = vsprintf($sql, $bindings);
         $data = [
             'db' => $dbName,
-            'query' => $sql,
+            'query' => $query,
             'bindings' => $bindings
         ];
         HistorySql::write($data);
